@@ -1,5 +1,5 @@
 [build]
-  publish = "/"
+  publish = "."
   
 [[headers]]
   for = "/*"
@@ -11,12 +11,18 @@
     Content-Security-Policy = "default-src 'self' cdnjs.cloudflare.com my.matterport.com; script-src 'self' 'unsafe-inline' cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' cdnjs.cloudflare.com; font-src * data:; img-src 'self' data: https:; frame-src https://my.matterport.com; connect-src 'self'" 
 
 [[redirects]]
+  from = "/pages/*"
+  to = "/pages/:splat"
+  status = 200
+
+[[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
+  force = true
 
 [build.processing]
   skip_processing = false
 
 [build.processing.html]
-  pretty_urls = true 
+  pretty_urls = true
