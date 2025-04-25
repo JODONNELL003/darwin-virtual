@@ -1,34 +1,21 @@
 [build]
-  publish = "."
-  
-[[headers]]
-  for = "/*"
-  [headers.values]
-    X-Frame-Options = "DENY"
-    X-XSS-Protection = "1; mode=block"
-    X-Content-Type-Options = "nosniff"
-    Referrer-Policy = "strict-origin-when-cross-origin"
-    Content-Security-Policy = "default-src 'self' cdnjs.cloudflare.com my.matterport.com; script-src 'self' 'unsafe-inline' cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' cdnjs.cloudflare.com; font-src * data:; img-src 'self' data: https:; frame-src https://my.matterport.com; connect-src 'self'" 
-
-[[headers]]
-  for = "*.js"
-  [headers.values]
-    Content-Type = "application/javascript"
-
-[[headers]]
-  for = "*.css"
-  [headers.values]
-    Content-Type = "text/css"
+  publish = "/"
+  command = ""
 
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
-  force = true
 
 [build.processing]
   skip_processing = false
-
+[build.processing.css]
+  bundle = true
+  minify = true
+[build.processing.js]
+  bundle = true
+  minify = true
 [build.processing.html]
   pretty_urls = true
-  strip_html_extension = true
+[build.processing.images]
+  compress = true 
