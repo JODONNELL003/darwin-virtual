@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Darwin Scans</title>
+    
+    <!-- Preconnect to external resources -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    
+    <!-- Prefetch other pages -->
+    <link rel="prefetch" href="../index.html">
+    <link rel="prefetch" href="about.html">
+    <link rel="prefetch" href="services/virtual-tours.html">
+    
+    <!-- Critical CSS loaded first -->
+    <link rel="stylesheet" href="../styles.css">
+    
+    <!-- Defer non-critical CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"></noscript>
+    
+    <!-- Preload critical fonts and images -->
+    <link rel="preload" as="image" href="../images/final/1a-scaled.jpg">
+    
+    <!-- Defer JavaScript -->
+    <script src="../script.js" defer></script>
+</head>
+<body>
+    <div class="preloader">
+        <div class="loader"></div>
+    </div>
+    
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1><a href="../index.html">Darwin Scans</a></h1>
+                <p class="subtitle"><em>Part of Darwin Solutions</em></p>
+            </div>
+            <nav>
+                <ul class="main-menu">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services/virtual-tours.html">Virtual Tours</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+                <div class="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Contact Us</h1>
+        </div>
+    </section>
+
+    <section class="page-content">
+        <div class="container">
+            <h2>Get in Touch</h2>
+            
+            <div class="contact-layout">
+                <div class="contact-info">
+                    <h3>Our Office</h3>
+                    <address>
+                        <p><i class="fas fa-map-marker-alt"></i> Darwin House<br>1120 Tech Avenue<br>Silicon Valley, CA 95000</p>
+                        <p><i class="fas fa-phone"></i> 555-123-4567</p>
+                        <p><i class="fas fa-envelope"></i> info@darwinscans.com</p>
+                    </address>
+                    
+                    <div class="office-hours">
+                        <h4>Office Hours</h4>
+                        <p>Monday - Friday: 9:00 AM - 5:30 PM</p>
+                        <p>Saturday: 10:00 AM - 2:00 PM</p>
+                        <p>Sunday: Closed</p>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="https://facebook.com" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://twitter.com" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="https://linkedin.com" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://instagram.com" class="social-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>Send Us a Message</h3>
+                    <form class="contact-form" method="POST" action="/submit-form" novalidate>
+                        <input type="hidden" name="csrf_token" value="${csrfToken}">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" 
+                                   id="name" 
+                                   name="name" 
+                                   required 
+                                   maxlength="100" 
+                                   pattern="^[A-Za-z0-9\s]{1,100}$" 
+                                   title="Please use only letters, numbers and spaces"
+                                   autocomplete="name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" 
+                                   id="email" 
+                                   name="email" 
+                                   required 
+                                   maxlength="254" 
+                                   pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+                                   autocomplete="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone (optional)</label>
+                            <input type="tel" 
+                                   id="phone" 
+                                   name="phone" 
+                                   pattern="[0-9+\-\s()]{10,20}" 
+                                   title="Please enter a valid phone number"
+                                   autocomplete="tel">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <select id="subject" 
+                                    name="subject" 
+                                    required>
+                                <option value="">Please select a subject</option>
+                                <option value="quote">Request a Quote</option>
+                                <option value="demo">Schedule Demo</option>
+                                <option value="support">Technical Support</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" 
+                                      name="message" 
+                                      required 
+                                      maxlength="1000"
+                                      rows="5"></textarea>
+                        </div>
+                        <!-- Honeypot field -->
+                        <div class="form-group" style="display:none" aria-hidden="true">
+                            <input type="text" 
+                                   name="website" 
+                                   id="website" 
+                                   autocomplete="off" 
+                                   tabindex="-1">
+                        </div>
+                        <!-- Add timestamp to prevent automated submissions -->
+                        <input type="hidden" name="timestamp" value="">
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="company-info">
+                    <h4>Darwin Scans</h4>
+                    <address>
+                        Darwin House, 1120 Tech Avenue<br>
+                        Silicon Valley, CA 95000<br>
+                        <span><i class="fas fa-phone"></i> 555-123-4567</span><br>
+                        <span><i class="fas fa-envelope"></i> info@darwinscans.com</span>
+                    </address>
+                </div>
+                <div class="business-hours">
+                    <h4>Business Hours</h4>
+                    <p>Monday - Friday: 9:00 AM - 5:30 PM<br>
+                    Saturday: 10:00 AM - 2:00 PM<br>
+                    Sunday: Closed</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Darwin Scans - All Rights Reserved</p>
+            </div>
+        </div>
+    </footer>
+
+    <script nonce="${nonce}">
+        // Set timestamp on form submission
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            this.querySelector('input[name="timestamp"]').value = Date.now();
+        });
+    </script>
+</body>
+</html> 
