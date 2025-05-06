@@ -1,0 +1,27 @@
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ $1.html [L]
+
+# Ensure proper MIME types
+AddType text/css .css
+AddType text/javascript .js
+AddType image/x-icon .ico
+
+# Enable CORS
+Header set Access-Control-Allow-Origin "*"
+
+# Security headers
+Header set X-Content-Type-Options "nosniff"
+Header set X-Frame-Options "SAMEORIGIN"
+Header set X-XSS-Protection "1; mode=block"
+Header set Referrer-Policy "strict-origin-when-cross-origin"
+
+# Caching
+<FilesMatch "\.(html|htm)$">
+    Header set Cache-Control "max-age=0, private, no-cache, no-store, must-revalidate"
+</FilesMatch>
+
+<FilesMatch "\.(css|js|jpg|jpeg|png|gif|ico|svg|woff|woff2)$">
+    Header set Cache-Control "max-age=31536000, public"
+</FilesMatch> 

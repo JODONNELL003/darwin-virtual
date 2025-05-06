@@ -7,6 +7,21 @@
   to = "/index.html"
   status = 200
 
+[[redirects]]
+  from = "/about"
+  to = "/pages/about.html"
+  status = 200
+
+[[redirects]]
+  from = "/contact"
+  to = "/pages/contact.html"
+  status = 200
+
+[[redirects]]
+  from = "/services/*"
+  to = "/pages/services/:splat.html"
+  status = 200
+
 [build.processing]
   skip_processing = false
 [build.processing.css]

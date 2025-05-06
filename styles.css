@@ -725,16 +725,6 @@ footer {
     padding-bottom: 10px;
 }
 
-.company-info h4:after, .business-hours h4:after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 2px;
-    width: 50px;
-    background-color: var(--secondary-color);
-}
-
 .company-info address {
     font-style: normal;
     line-height: 1.8;
