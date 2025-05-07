@@ -36,13 +36,13 @@ function validateResourceAccess(path) {
         return false;
     }
     
-    // Whitelist of allowed file extensions
+    // Whitelist of allowed file extensions and paths
     const allowedExtensions = ['.html', '.css', '.js', '.jpg', '.jpeg', '.png', '.gif', '.svg'];
+    const allowedPaths = ['/', '/about', '/contact', '/services', '/pages/about.html', '/pages/contact.html', '/pages/services/virtual-tours.html'];
+    
     return allowedExtensions.some(ext => normalizedPath.endsWith(ext)) || 
-           normalizedPath === '/' || 
-           normalizedPath === '/about' || 
-           normalizedPath === '/contact' || 
-           normalizedPath.startsWith('/services/');
+           allowedPaths.includes(normalizedPath) ||
+           normalizedPath.startsWith('/pages/');
 }
 
 document.addEventListener('DOMContentLoaded', function() {
