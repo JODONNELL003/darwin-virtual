@@ -61,18 +61,19 @@ footer {
 
 .company-info address {
     font-style: normal;
+    line-height: 1.6;
 }
 
-.company-info address p {
-    margin-bottom: 0.5rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+.company-info address span {
+    display: inline-block;
+    margin-bottom: 5px;
 }
 
 .company-info address i {
     color: var(--white);
-    width: 20px;
+    margin-right: 0.5rem;
+    width: 16px;
+    text-align: center;
 }
 
 .business-hours p {
@@ -88,25 +89,38 @@ footer {
 /* Mobile Footer Styles */
 @media (max-width: 768px) {
     footer {
-        padding: 2rem 0 1rem;
+        padding: 30px 0 15px;
     }
 
     .footer-content {
         flex-direction: column;
         text-align: center;
-        gap: 1.5rem;
+        gap: 30px;
     }
 
-    .company-info, .business-hours {
+    .company-info,
+    .business-hours {
         width: 100%;
     }
-
-    .company-info address p {
-        justify-content: center;
+    
+    .company-info address span {
+        display: block;
+        margin-bottom: 10px;
+    }
+    
+    .company-info address i {
+        display: inline-block;
+        margin-right: 5px;
+        color: var(--white);
     }
 
-    .company-info address i {
-        margin-right: 0.5rem;
+    .business-hours p {
+        margin-bottom: 8px;
+    }
+
+    .copyright {
+        margin-top: 20px;
+        padding-top: 15px;
     }
 }
 
@@ -423,6 +437,13 @@ nav {
         padding: 15px 0;
         font-size: 1.5rem;
         color: var(--white);
+    }
+
+    .main-menu li a {
+        color: var(--white);
+        text-align: center;
+        padding: 15px 0;
+        font-weight: 500;
     }
 
     .dropdown-menu {
