@@ -863,23 +863,23 @@ footer {
 
 /* New photogrammetry section images */
 #photogrammetry-capture {
-    background: url('images/final/matterport doll house 3.jpg') no-repeat center center/cover;
+    background: #f5f5f5;
 }
 
 #photogrammetry-model {
-    background: url('images/final/Dollhouse-view-of-a-property-Matterport.png') no-repeat center center/cover;
+    background: #f5f5f5;
 }
 
 #photogrammetry-processing {
-    background: url('images/photogrammetry/processing.jpeg') no-repeat center center/cover;
+    background: #f5f5f5;
 }
 
 #photogrammetry-analysis {
-    background: url('images/final/matterport floor plans.jpg') no-repeat center center/cover;
+    background: #f5f5f5;
 }
 
 #photogrammetry-application {
-    background: url('images/final/23aae5c24a5976d78e9699c6e8303639.jpg') no-repeat center center/cover;
+    background: #f5f5f5;
 }
 
 .transformation-content {
