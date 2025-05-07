@@ -233,36 +233,15 @@
     
     <!-- Defer JavaScript -->
     <script src="script.js" defer></script>
+    <script src="components/include.js" defer></script>
 </head>
 <body>
     <div class="preloader">
         <div class="loader"></div>
     </div>
     
-    <header>
-        <div class="container">
-            <div class="logo">
-                <h1><a href="/">Darwin Scans</a></h1>
-                <p class="subtitle"><em>Part of Darwin Solutions</em></p>
-            </div>
-            <nav>
-                <ul class="main-menu">
-                    <div class="close-menu">
-                        <i class="fas fa-times"></i>
-                    </div>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="pages/about.html">About Us</a></li>
-                    <li><a href="pages/services/virtual-tours.html">Virtual Tours</a></li>
-                    <li><a href="pages/contact.html">Contact Us</a></li>
-                </ul>
-                <div class="mobile-menu-toggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </nav>
-        </div>
-    </header>
+    <!-- Header Component -->
+    <div id="header-container"></div>
 
     <section class="hero">
         <div class="hero-slider">
@@ -466,25 +445,8 @@
         </div>
     </section>
 
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="company-info" style="text-align: center; width: 100%;">
-                    <h4>Darwin Scans</h4>
-                    <address>
-                        15 Park Parade<br>
-                        Harlesden, London, NW10 4JH<br>
-                        <span><i class="fas fa-phone"></i> 07788 758583</span><br>
-                        <span><i class="fas fa-phone"></i> 020 8951 9458</span><br>
-                        <span><i class="fas fa-envelope"></i> brandon@darwinsolutions.co.uk</span>
-                    </address>
-                </div>
-            </div>
-            <div class="copyright">
-                <p>&copy; 2025 Darwin Scans - All Rights Reserved</p>
-            </div>
-        </div>
-    </footer>
+    <!-- Footer Component -->
+    <div id="footer-container"></div>
     
     <!-- Modern Hero Section JavaScript -->
     <script>

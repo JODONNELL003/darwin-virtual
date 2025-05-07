@@ -26,33 +26,15 @@
     
     <!-- Defer JavaScript -->
     <script src="../script.js" defer></script>
+    <script src="../components/include.js" defer></script>
 </head>
 <body>
     <div class="preloader">
         <div class="loader"></div>
     </div>
     
-    <header>
-        <div class="container">
-            <div class="logo">
-                <h1><a href="../index.html">Darwin Scans</a></h1>
-                <p class="subtitle"><em>Part of Darwin Solutions</em></p>
-            </div>
-            <button class="mobile-menu-toggle" aria-label="Toggle menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <nav>
-                <ul class="main-menu">
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/pages/about.html">About Us</a></li>
-                    <li><a href="/pages/services/virtual-tours.html">Virtual Tours</a></li>
-                    <li><a href="/pages/contact.html">Contact Us</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    <!-- Header Component -->
+    <div id="header-container"></div>
 
     <section class="page-header">
         <div class="container">
@@ -69,8 +51,8 @@
                     <h3>Our Office</h3>
                     <address>
                         <p><i class="fas fa-map-marker-alt"></i> <br>15 Park Parade<br>Harlesden,<br> London, NW10 4JH</p>
-                        <p><i class="fas fa-phone"></i> 07788 758583</p>
-                        <p><i class="fas fa-phone"></i> 020 8951 9458</p>
+                        <p><i class="fas fa-phone"></i> <a href="tel:07788758583" class="phone-link">07788 758583</a></p>
+                        <p><i class="fas fa-phone"></i> <a href="tel:02089519458" class="phone-link">020 8951 9458</a></p>
                         <p><i class="fas fa-envelope"></i> brandon@darwinsolutions.co.uk</p>
                     </address>
                 </div>
@@ -146,30 +128,8 @@
         </div>
     </section>
 
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="company-info">
-                    <h4>Darwin Scans</h4>
-                    <address>
-                        <p><i class="fas fa-map-marker-alt"></i> 15 Park Parade<br>Harlesden, London, NW10 4JH</p>
-                        <p><i class="fas fa-phone"></i> 07788 758583</p>
-                        <p><i class="fas fa-phone"></i> 020 8951 9458</p>
-                        <p><i class="fas fa-envelope"></i> brandon@darwinsolutions.co.uk</p>
-                    </address>
-                </div>
-                <div class="business-hours">
-                    <h4>Business Hours</h4>
-                    <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
-                    <p>Saturday: 10:00 AM - 4:00 PM</p>
-                    <p>Sunday: Closed</p>
-                </div>
-            </div>
-            <div class="copyright">
-                <p>&copy; 2025 Darwin Scans - All Rights Reserved</p>
-            </div>
-        </div>
-    </footer>
+    <!-- Footer Component -->
+    <div id="footer-container"></div>
 
     <script nonce="${nonce}">
         // Set timestamp on form submission
