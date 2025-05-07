@@ -1383,19 +1383,19 @@ footer {
 }
 
 #member-1 {
-    background-image: url('images/team/team1.jpg');
+    background: #f5f5f5;
 }
 
 #member-2 {
-    background-image: url('images/team/team2.jpg');
+    background: #f5f5f5;
 }
 
 #member-3 {
-    background-image: url('images/team/team3.jpg');
+    background: #f5f5f5;
 }
 
 #member-4 {
-    background-image: url('images/team/team4.jpg');
+    background: #f5f5f5;
 }
 
 .member-info h3 {
