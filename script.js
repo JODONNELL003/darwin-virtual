@@ -328,22 +328,23 @@ document.addEventListener('DOMContentLoaded', function() {
     // Mobile Menu Toggle
     const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
     const mainMenu = document.querySelector('.main-menu');
+    const body = document.body;
     
     if (mobileMenuToggle && mainMenu) {
         mobileMenuToggle.addEventListener('click', () => {
             mobileMenuToggle.classList.toggle('active');
-            mainMenu.classList.toggle('active');
-            document.body.style.overflow = mainMenu.classList.contains('active') ? 'hidden' : '';
+            mainMenu.parentElement.classList.toggle('active');
+            body.style.overflow = mainMenu.parentElement.classList.contains('active') ? 'hidden' : '';
         });
 
         // Close menu when clicking outside
         document.addEventListener('click', (e) => {
-            if (mainMenu.classList.contains('active') && 
+            if (mainMenu.parentElement.classList.contains('active') && 
                 !mainMenu.contains(e.target) && 
                 !mobileMenuToggle.contains(e.target)) {
                 mobileMenuToggle.classList.remove('active');
-                mainMenu.classList.remove('active');
-                document.body.style.overflow = '';
+                mainMenu.parentElement.classList.remove('active');
+                body.style.overflow = '';
             }
         });
 
@@ -352,9 +353,18 @@ document.addEventListener('DOMContentLoaded', function() {
         menuLinks.forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenuToggle.classList.remove('active');
-                mainMenu.classList.remove('active');
-                document.body.style.overflow = '';
+                mainMenu.parentElement.classList.remove('active');
+                body.style.overflow = '';
             });
+        });
+
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                mobileMenuToggle.classList.remove('active');
+                mainMenu.parentElement.classList.remove('active');
+                body.style.overflow = '';
+            }
         });
     }
     
