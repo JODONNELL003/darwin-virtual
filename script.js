@@ -328,6 +328,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Mobile Menu Functionality
     const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
     const mainMenu = document.querySelector('.main-menu');
+    const closeMenu = document.querySelector('.close-menu');
     const body = document.body;
 
     if (mobileMenuToggle && mainMenu) {
@@ -337,6 +338,15 @@ document.addEventListener('DOMContentLoaded', function() {
             mainMenu.classList.toggle('active');
             body.classList.toggle('menu-open');
         });
+
+        // Close menu with X button
+        if (closeMenu) {
+            closeMenu.addEventListener('click', () => {
+                mobileMenuToggle.classList.remove('active');
+                mainMenu.classList.remove('active');
+                body.classList.remove('menu-open');
+            });
+        }
 
         // Close menu when clicking outside
         document.addEventListener('click', (e) => {

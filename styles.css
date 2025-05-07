@@ -413,6 +413,7 @@ nav {
         transition: right 0.3s ease;
         z-index: 999;
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
     }
@@ -422,6 +423,7 @@ nav {
     }
 
     .main-menu ul {
+        display: flex;
         flex-direction: column;
         gap: 2rem;
         text-align: center;
@@ -430,6 +432,8 @@ nav {
 
     .main-menu li {
         width: 100%;
+        display: block;
+        margin: 15px 0;
     }
 
     .main-menu a {
@@ -444,6 +448,21 @@ nav {
         text-align: center;
         padding: 15px 0;
         font-weight: 500;
+    }
+
+    .close-menu {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        color: var(--white);
+        font-size: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1001;
     }
 
     .dropdown-menu {
@@ -474,6 +493,21 @@ nav {
 
     body.menu-open {
         overflow: hidden;
+    }
+    
+    /* Fix for phone numbers in footer */
+    .company-info address span {
+        display: block !important;
+        margin-bottom: 10px;
+        color: var(--white);
+        visibility: visible;
+        opacity: 1;
+    }
+    
+    .company-info address i {
+        display: inline-block;
+        margin-right: 5px;
+        color: var(--white);
     }
 }
 
