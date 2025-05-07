@@ -32,14 +32,17 @@ function validateResourceAccess(path) {
     const normalizedPath = path.replace(/\\/g, '/').toLowerCase();
     if (normalizedPath.includes('../') || 
         normalizedPath.includes('..\\') || 
-        normalizedPath.startsWith('/') || 
         normalizedPath.includes('//')) {
         return false;
     }
     
     // Whitelist of allowed file extensions
     const allowedExtensions = ['.html', '.css', '.js', '.jpg', '.jpeg', '.png', '.gif', '.svg'];
-    return allowedExtensions.some(ext => normalizedPath.endsWith(ext));
+    return allowedExtensions.some(ext => normalizedPath.endsWith(ext)) || 
+           normalizedPath === '/' || 
+           normalizedPath === '/about' || 
+           normalizedPath === '/contact' || 
+           normalizedPath.startsWith('/services/');
 }
 
 document.addEventListener('DOMContentLoaded', function() {
