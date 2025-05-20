@@ -270,7 +270,7 @@
             <h2>Experience Our 3D Virtual Tours</h2>
             <p>Step inside and explore a space virtually as if you were there in person.</p>
             <div class="tour-container">
-                <iframe width="100%" height="600" src="https://my.matterport.com/show/?m=BTAMQbCGWHN&brand=0" frameborder="0" allowfullscreen allow="autoplay; fullscreen; web-share; xr-spatial-tracking;"></iframe>
+                <iframe width="853" height="480" src="https://my.matterport.com/show/?m=6w2iidjQeW2" frameborder="0" allowfullscreen allow="autoplay; fullscreen; web-share; xr-spatial-tracking;"></iframe>
             </div>
             <div class="showcase-features">
                 <div class="feature">
@@ -417,14 +417,26 @@
                     </div>
                 </div>
             </div>
-            
-            <div class="cta-container" style="text-align: center; margin-top: 60px;">
+            <!-- Technology Demo Button moved inside transformations section -->
+            <div style="text-align: center; margin-top: 20px;">
                 <a href="pages/contact.html" class="btn">Schedule a Technology Demo</a>
             </div>
+            <!-- Products Offer Component moved up -->
+            <div id="products-offer-container" style="transform: scale(1.1); width: 100%; max-width: 1400px; margin: 0 auto; margin-top: 70px;"></div>
         </div>
     </section>
+    <!-- Technology Demo Button -->
+    <div class="cta-container" style="text-align: center; padding-top: 0; display: none;">
+        <a href="pages/contact.html" class="btn">Schedule a Technology Demo</a>
+    </div>
+    <!-- Products Offer Component -->
+    <div class="cta-container" style="display: none;">
+        <a href="pages/contact.html" class="btn">Schedule a Technology Demo</a>
+    </div>
+    <!-- Original products-offer-container (hidden) -->
+    <div id="products-offer-container" style="display: none;"></div>
 
-    <section class="values">
+    <section class="values" style="margin-top: -50px;">
         <div class="container">
             <h2>Our Values</h2>
             <div class="values-grid">
@@ -441,7 +453,6 @@
                     <p>We tailor our services to meet the unique needs of each client, ensuring complete satisfaction.</p>
                 </div>
             </div>
-            <a href="pages/services/virtual-tours.html" class="btn-secondary">Explore Our Virtual Tours</a>
         </div>
     </section>
 
