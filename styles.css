@@ -2039,4 +2039,61 @@ nav {
         width: 120px;
         height: 120px;
     }
+}
+
+/* Contact page phone number styles */
+.contact-info address p {
+    color: var(--text-color);
+}
+
+.contact-info address p i {
+    color: var(--primary-color);
+}
+
+.contact-info .phone-link {
+    color: var(--text-color);
+}
+
+/* Products Offer Component Styles */
+.products-offer-container {
+  background: #CED7D7;
+  color: #19242B;
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 32px 24px 24px 24px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(25,36,43,0.08);
+  text-align: center;
+}
+.products-offer-container h2 {
+  font-size: 1.6rem;
+  font-weight: bold;
+  text-decoration: underline;
+  margin-bottom: 18px;
+  letter-spacing: 1px;
+}
+.products-offer-container ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 18px 0;
+}
+.products-offer-container ul li {
+  margin-bottom: 6px;
+  font-size: 1.08rem;
+}
+.promo-title {
+  font-weight: bold;
+  text-decoration: underline;
+  font-size: 1.15rem;
+  margin: 18px 0 8px 0;
+  display: block;
+}
+.promo-offer {
+  font-weight: 500;
+  margin-bottom: 18px;
+  font-size: 1.05rem;
+}
+.products-offer-container p {
+  margin: 0 0 12px 0;
+  font-size: 1.01rem;
 } 

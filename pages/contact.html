@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - Darwin Scans</title>
+    <title>Contact Us - DS - Scans</title>
     
     <!-- Preconnect to external resources -->
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
@@ -59,8 +59,7 @@
                 
                 <div class="contact-form">
                     <h3>Send Us a Message</h3>
-                    <form class="contact-form" method="POST" action="/submit-form" novalidate>
-                        <input type="hidden" name="csrf_token" value="${csrfToken}">
+                    <form class="contact-form" method="POST" action="/submit-form">
                         <div class="form-group">
                             <label for="name">Name</label>
                             <input type="text" 
@@ -119,8 +118,6 @@
                                    autocomplete="off" 
                                    tabindex="-1">
                         </div>
-                        <!-- Add timestamp to prevent automated submissions -->
-                        <input type="hidden" name="timestamp" value="">
                         <button type="submit" class="btn">Send Message</button>
                     </form>
                 </div>

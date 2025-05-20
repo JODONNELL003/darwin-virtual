@@ -1,6 +1,6 @@
-# Darwin Scans Website
+# DS - Scans Website
 
-A professional website for Darwin Scans, a B2B service offering comprehensive 3D photogrammetry property scanning solutions for virtual 3D tours.
+A professional website for DS - Scans, a B2B service offering comprehensive 3D photogrammetry property scanning solutions for virtual 3D tours.
 
 ## Features
 

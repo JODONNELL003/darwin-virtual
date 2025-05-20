@@ -27,6 +27,18 @@ document.addEventListener('DOMContentLoaded', async function() {
         }
     }
     
+    // Load products offer (pricing component)
+    const productsOfferContainer = document.getElementById('products-offer-container');
+    if (productsOfferContainer) {
+        try {
+            const productsOfferResponse = await fetch('/components/products-offer.html');
+            const productsOfferHtml = await productsOfferResponse.text();
+            productsOfferContainer.innerHTML = productsOfferHtml;
+        } catch (error) {
+            console.error('Error loading products offer:', error);
+        }
+    }
+    
     // Initialize mobile menu functionality
     function initializeMobileMenu() {
         const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
