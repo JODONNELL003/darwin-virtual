@@ -743,18 +743,17 @@ nav {
 
 @media (max-width: 768px) {
     .hero {
-        height: 170vh; /* Fallback */
-        height: calc(var(--vh, 1vh) * 170);
-        min-height: 1200px; /* Fallback */
-        min-height: calc(var(--vh, 1vh) * 170);
+        height: 85vh !important; /* Reduced by 50% from 170vh */
+        height: calc(var(--vh, 1vh) * 85) !important;
+        min-height: 600px !important; /* Reduced by 50% from 1200px */
+        min-height: calc(var(--vh, 1vh) * 85) !important;
     }
     
     .hero-content h2 {
-        font-size: 2.2rem;
+        font-size: 2.5rem;
     }
-    
     .hero-content p {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
     }
     
     .hero-slide {
@@ -764,10 +763,10 @@ nav {
 
 @media (max-width: 576px) {
     .hero {
-        height: 160vh; /* Fallback */
-        height: calc(var(--vh, 1vh) * 160);
-        min-height: 1100px; /* Fallback */
-        min-height: calc(var(--vh, 1vh) * 160);
+        height: 80vh !important; /* Reduced by 50% from 160vh */
+        height: calc(var(--vh, 1vh) * 80) !important;
+        min-height: 550px !important; /* Reduced by 50% from 1100px */
+        min-height: calc(var(--vh, 1vh) * 80) !important;
     }
     
     .hero-content h2 {
