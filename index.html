@@ -6,208 +6,8 @@
     <meta http-equiv="Content-Security-Policy" content="default-src 'self' cdnjs.cloudflare.com; script-src 'self' 'unsafe-inline' cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' cdnjs.cloudflare.com; font-src * data:; img-src 'self' data: https:; frame-src https://my.matterport.com; connect-src 'self'; navigate-to 'self';">
     <title>DS - Scans - 3D Photogrammetry Property Scanning Solutions</title>
     
-    <!-- Critical CSS inline -->
-    <style>
-        /* Critical rendering path CSS - only include what's needed for initial render */
-        :root{
-            --primary-color:#0066cc;
-            --secondary-color:#00478f;
-            --white:#fff;
-            --dark:#111;
-            --gradient-start:rgba(0,0,0,0.8);
-            --gradient-end:rgba(0,102,204,0.4);
-        }
-        .preloader{position:fixed;top:0;left:0;width:100%;height:100%;background-color:#fff;display:flex;justify-content:center;align-items:center;z-index:9999;transition:opacity .3s ease-out,visibility .3s ease-out;will-change:opacity,visibility}
-        .preloader.loaded{opacity:0;visibility:hidden}
-        .loader{width:40px;height:40px;border:4px solid #f5f5f5;border-top:4px solid var(--primary-color);border-radius:50%;animation:spin .8s linear infinite;will-change:transform}
-        @keyframes spin{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}
-        body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;line-height:1.6;opacity:1;margin:0;padding:0}
-        header{background-color:var(--white);box-shadow:0 2px 10px rgba(0,0,0,.1);position:fixed;width:100%;top:0;z-index:1000}
-        .container{width:90%;max-width:1200px;margin:0 auto;padding:0 15px}
-        header .container{display:flex;justify-content:space-between;align-items:center;padding:15px}
-    </style>
-    
-    <!-- Hero section specific styling -->
-    <style>
-        .hero {
-            position: relative;
-            height: 100vh;
-            overflow: hidden;
-            background: var(--dark);
-            margin-top: 80px;
-        }
-        
-        .hero-slider {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-        
-        .hero-slide {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0;
-            transition: opacity 1s ease-in-out, transform 1.5s ease-in-out;
-            background-size: 90% auto;
-            background-position: center;
-            background-repeat: no-repeat;
-            transform: scale(1.1);
-        }
-        
-        .hero-slide.active {
-            opacity: 1;
-            transform: scale(1);
-        }
-        
-        .hero-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
-            z-index: 2;
-        }
-        
-        .hero-content {
-            position: relative;
-            z-index: 3;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 20px;
-            color: var(--white);
-        }
-        
-        .hero-content h2 {
-            font-size: 4rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeInUp 0.8s forwards 0.5s;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-        
-        .hero-content p {
-            font-size: 1.8rem;
-            margin-bottom: 2rem;
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeInUp 0.8s forwards 0.8s;
-            max-width: 800px;
-            line-height: 1.4;
-        }
-        
-        .hero-cta {
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeInUp 0.8s forwards 1.1s;
-        }
-        
-        .btn {
-            display: inline-block;
-            background: transparent;
-            color: var(--white);
-            padding: 15px 40px;
-            text-decoration: none;
-            border: 2px solid var(--white);
-            border-radius: 50px;
-            font-size: 1.2rem;
-            font-weight: 600;
-            letter-spacing: 1px;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-        }
-        
-        .btn:hover {
-            background: var(--white);
-            color: var(--primary-color);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-        }
-        
-        .hero-scroll {
-            position: absolute;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 3;
-            opacity: 0;
-            animation: fadeIn 1s forwards 1.5s;
-            cursor: pointer;
-        }
-        
-        .scroll-indicator {
-            width: 30px;
-            height: 50px;
-            border: 2px solid var(--white);
-            border-radius: 15px;
-            position: relative;
-        }
-        
-        .scroll-indicator::before {
-            content: '';
-            position: absolute;
-            left: 50%;
-            top: 10px;
-            width: 4px;
-            height: 8px;
-            background: var(--white);
-            margin-left: -2px;
-            border-radius: 2px;
-            animation: scrollDown 2s infinite;
-        }
-        
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        
-        @keyframes scrollDown {
-            0% { transform: translateY(0); opacity: 1; }
-            50% { transform: translateY(20px); opacity: 0.5; }
-            100% { transform: translateY(0); opacity: 1; }
-        }
-        
-        @media (max-width: 1200px) {
-            .hero-slide {
-                background-size: 95% auto;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .hero-slide {
-                background-size: cover;
-            }
-            .hero-content h2 {
-                font-size: 2.5rem;
-            }
-            .hero-content p {
-                font-size: 1.2rem;
-            }
-        }
-    </style>
-    
+    <!-- Critical CSS is now in styles.css -->
+
     <!-- Preconnect to external resources -->
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
@@ -218,9 +18,8 @@
     <link rel="prefetch" href="pages/services/virtual-tours.html">
     <link rel="prefetch" href="pages/contact.html">
     
-    <!-- Non-critical CSS loaded asynchronously -->
-    <link rel="stylesheet" href="styles.css" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="styles.css"></noscript>
+    <!-- CSS loaded first for better performance -->
+    <link rel="stylesheet" href="styles.css">
     
     <!-- Defer non-critical CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" media="print" onload="this.media='all'">
@@ -234,6 +33,7 @@
     <!-- Defer JavaScript -->
     <script src="script.js" defer></script>
     <script src="components/include.js" defer></script>
+    <script src="js/heroSlider.js" defer></script>
 </head>
 <body>
     <div class="preloader">
@@ -245,9 +45,9 @@
 
     <section class="hero">
         <div class="hero-slider">
-            <div class="hero-slide" style="background-image: url('images/final/matterport doll house 3.png')"></div>
-            <div class="hero-slide" style="background-image: url('images/final/Dollhouse-view-of-a-property-Matterport.png')"></div>
-            <div class="hero-slide" style="background-image: url('images/final/23aae5c24a5976d78e9699c6e8303639.png')"></div>
+            <div class="hero-slide hero-slide-1 active" style="background-image: url('images/final/matterport doll house 3.png');"></div>
+            <div class="hero-slide hero-slide-2" style="background-image: url('images/final/Dollhouse-view-of-a-property-Matterport.png');"></div>
+            <div class="hero-slide hero-slide-3" style="background-image: url('images/final/23aae5c24a5976d78e9699c6e8303639.png');"></div>
         </div>
         
         <div class="hero-overlay"></div>
@@ -358,18 +158,18 @@
             
             <div class="transformation-showcase">
                 <div class="transformation-item">
-                    <div class="transformation-images" style="height: 450px; background-color: #f8f9fa;">
-                        <div class="before-image" style="background-image: url('images/final/1a-scaled.jpg'); background-size: 80% auto; background-repeat: no-repeat; background-position: center center; padding: 20px;">
+                    <div class="transformation-images transformation-images-custom">
+                        <div class="before-image transformation-2d-plan">
                             <div class="image-label">2D Floor Plan</div>
                         </div>
-                        <div class="after-image" style="background-image: url('images/final/23aae5c24a5976d78e9699c6e8303639.png'); background-size: contain; background-repeat: no-repeat; padding: 20px;">
+                        <div class="after-image transformation-3d-capture">
                             <div class="image-label">3D Reality Capture</div>
                         </div>
                     </div>
                     <div class="transformation-content">
                         <h3>3D to 2D Transformation</h3>
                         <p>Experience how we transform 3D spaces into traditional 2D floor plans. Our technology immerses you in the 3D space, allowing you to visualize and explore the real dimensions of each room.</p>
-                        <ul class="feature-list">
+                        <ul class="transformation-feature-list">
                             <li><i class="fas fa-cube"></i> Real-world perspective</li>
                             <li><i class="fas fa-street-view"></i> True-to-life visualization</li>
                             <li><i class="fas fa-arrows-alt"></i> Accurate spatial relations</li>
@@ -378,18 +178,18 @@
                 </div>
                 
                 <div class="transformation-item">
-                    <div class="transformation-images" style="height: 450px; background-color: #f8f9fa;">
-                        <div class="before-image" style="background-image: url('images/final/matterport floor plans.jpg'); background-size: 80% auto; background-repeat: no-repeat; background-position: center center; padding: 20px;">
+                    <div class="transformation-images transformation-images-custom">
+                        <div class="before-image transformation-floor-plan">
                             <div class="image-label">Detailed Floor Plan</div>
                         </div>
-                        <div class="after-image" style="background-image: url('images/final/Dollhouse-view-of-a-property-Matterport.png'); background-size: contain; background-repeat: no-repeat; padding: 10px;">
+                        <div class="after-image transformation-dollhouse">
                             <div class="image-label">Dollhouse View</div>
                         </div>
                     </div>
                     <div class="transformation-content">
                         <h3>Enhanced Spatial Understanding</h3>
                         <p>See how precise measurements translate into interactive 3D models. Our dollhouse view provides an intuitive understanding of the property's layout while maintaining accurate dimensions from the detailed floor plan.</p>
-                        <ul class="feature-list">
+                        <ul class="transformation-feature-list">
                             <li><i class="fas fa-ruler-combined"></i> Precise measurements</li>
                             <li><i class="fas fa-layer-group"></i> Multi-level visualization</li>
                             <li><i class="fas fa-drafting-compass"></i> Accurate proportions</li>
@@ -398,18 +198,18 @@
                 </div>
 
                 <div class="transformation-item">
-                    <div class="transformation-images" style="height: 450px; background-color: #f8f9fa;">
-                        <div class="before-image" style="background-image: url('images/final/1a-scaled.jpg'); background-size: 80% auto; background-repeat: no-repeat; background-position: center center; padding: 20px;">
+                    <div class="transformation-images transformation-images-custom">
+                        <div class="before-image transformation-original">
                             <div class="image-label">Original Layout</div>
                         </div>
-                        <div class="after-image" style="background-image: url('images/final/matterport doll house 3.png'); background-size: contain; background-repeat: no-repeat; padding: 10px;">
+                        <div class="after-image transformation-digital-twin">
                             <div class="image-label">Complete Digital Twin</div>
                         </div>
                     </div>
                     <div class="transformation-content">
                         <h3>Digital Twin Creation</h3>
                         The culmination of our process creates a complete digital twin - transforming detailed 3D enviroments into professional floor plans.
-                        <ul class="feature-list">
+                        <ul class="transformation-feature-list">
                             <li><i class="fas fa-vr-cardboard"></i> VR/AR ready output</li>
                             <li><i class="fas fa-vector-square"></i> Space planning tools</li>
                             <li><i class="fas fa-share-alt"></i> Easy sharing & embedding</li>
@@ -417,26 +217,16 @@
                     </div>
                 </div>
             </div>
-            <!-- Technology Demo Button moved inside transformations section -->
-            <div style="text-align: center; margin-top: 20px;">
+            <!-- Technology Demo Button -->
+            <div class="cta-container">
                 <a href="pages/contact.html" class="btn">Schedule a Technology Demo</a>
             </div>
-            <!-- Products Offer Component moved up -->
-            <div id="products-offer-container" style="transform: scale(1.1); width: 100%; max-width: 1400px; margin: 0 auto; margin-top: 70px;"></div>
+            <!-- Products Offer Component -->
+            <div id="products-offer-container" class="products-offer-scaled"></div>
         </div>
     </section>
-    <!-- Technology Demo Button -->
-    <div class="cta-container" style="text-align: center; padding-top: 0; display: none;">
-        <a href="pages/contact.html" class="btn">Schedule a Technology Demo</a>
-    </div>
-    <!-- Products Offer Component -->
-    <div class="cta-container" style="display: none;">
-        <a href="pages/contact.html" class="btn">Schedule a Technology Demo</a>
-    </div>
-    <!-- Original products-offer-container (hidden) -->
-    <div id="products-offer-container" style="display: none;"></div>
 
-    <section class="values" style="margin-top: -50px;">
+    <section class="values no-top-margin">
         <div class="container">
             <h2>Our Values</h2>
             <div class="values-grid">
@@ -458,60 +248,5 @@
 
     <!-- Footer Component -->
     <div id="footer-container"></div>
-    
-    <!-- Modern Hero Section JavaScript -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Hero Slider functionality
-            const slides = document.querySelectorAll('.hero-slide');
-            let currentSlide = 0;
-            
-            function showSlide(index) {
-                slides.forEach(slide => slide.classList.remove('active'));
-                slides[index].classList.add('active');
-            }
-            
-            function nextSlide() {
-                currentSlide = (currentSlide + 1) % slides.length;
-                showSlide(currentSlide);
-            }
-            
-            // Show first slide immediately
-            showSlide(0);
-            
-            // Rotate slides every 5 seconds
-            setInterval(nextSlide, 5000);
-            
-            // Scroll indicator functionality
-            const scrollIndicator = document.querySelector('.hero-scroll');
-            if (scrollIndicator) {
-                scrollIndicator.addEventListener('click', function() {
-                    const showcase = document.querySelector('.showcase');
-                    if (showcase) {
-                        showcase.scrollIntoView({ behavior: 'smooth' });
-                    }
-                });
-            }
-
-            // Add intersection observer for transformation items
-            const observerOptions = {
-                root: null,
-                rootMargin: '0px',
-                threshold: 0.2
-            };
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
-                });
-            }, observerOptions);
-
-            document.querySelectorAll('.transformation-item').forEach(item => {
-                observer.observe(item);
-            });
-        });
-    </script>
 </body>
 </html> 

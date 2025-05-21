@@ -185,6 +185,21 @@ document.addEventListener('DOMContentLoaded', function() {
         const preloader = document.querySelector('.preloader');
         if (preloader && !preloader.classList.contains('loaded')) {
             preloader.classList.add('loaded');
+            
+            // Make sure hero section is visible
+            const hero = document.querySelector('.hero');
+            if (hero) {
+                hero.style.display = 'block';
+                hero.style.visibility = 'visible';
+                
+                // Force active slide to be visible
+                const activeSlide = document.querySelector('.hero-slide.active');
+                if (activeSlide) {
+                    activeSlide.style.opacity = '1';
+                    activeSlide.style.visibility = 'visible';
+                }
+            }
+            
             // Remove preloader from DOM after animation
             setTimeout(() => {
                 if (preloader.parentNode) {

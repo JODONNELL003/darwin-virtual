@@ -27,6 +27,7 @@
     <!-- Defer JavaScript -->
     <script src="../script.js" defer></script>
     <script src="../components/include.js" defer></script>
+    <script src="../js/formHandlers.js" defer></script>
 </head>
 <body>
     <div class="preloader">
@@ -111,7 +112,7 @@
                                       rows="5"></textarea>
                         </div>
                         <!-- Honeypot field -->
-                        <div class="form-group" style="display:none" aria-hidden="true">
+                        <div class="form-group honeypot" aria-hidden="true">
                             <input type="text" 
                                    name="website" 
                                    id="website" 
@@ -127,12 +128,5 @@
 
     <!-- Footer Component -->
     <div id="footer-container"></div>
-
-    <script nonce="${nonce}">
-        // Set timestamp on form submission
-        document.querySelector('.contact-form').addEventListener('submit', function(e) {
-            this.querySelector('input[name="timestamp"]').value = Date.now();
-        });
-    </script>
 </body>
 </html> 
